@@ -1,7 +1,8 @@
+import * as WebPlayer from '../../public/web-player'
 const clientId = '28e3d5fbf78849fa82982068bf1f9589';
 const redirectUri = 'http://localhost:3000/';
 
-let accessToken;
+let accessToken = WebPlayer._token;
 
 const Spotify = {
 
@@ -27,6 +28,7 @@ const Spotify = {
     // Uses access token to return a response from the Spoitify API using user serach term from SearchBar
     search(term) {
         const accessToken = Spotify.getAccessToken();
+        console.log(accessToken);
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
             headers: {
                 Authorization: `Bearer ${accessToken}`

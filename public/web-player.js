@@ -1,12 +1,47 @@
-const token = 'BQBwi9T2cwE6rxBYhuHarat2vTUFX-OPUTDZB3sjO4Z_C8LFRVZipiv_lZno3vg6RavcKM7pttHPLO8kXgyDRcsQXydUTMsiS8Y_d84Sdm8IdTpeXR3KP6PJoohR9GzSJWM4i9le8esiY0y8kMSixeg06XERNi9s2_ZP6Fgm5OzE1tfKV0_Y8Ic';
 export let deviceID;
-let player;
 export let spotify_uri_num
+let player;
+
+// Get the hash of the url
+const hash = window.location.hash
+.substring(1)
+.split('&')
+.reduce(function (initial, item) {
+  if (item) {
+    var parts = item.split('=');
+    initial[parts[0]] = decodeURIComponent(parts[1]);
+  }
+  return initial;
+}, {});
+window.location.hash = '';
+
+// Set token
+export let _token = hash.access_token;
+console.log(_token);
+
+const authEndpoint = 'https://accounts.spotify.com/authorize';
+
+// Replace with your app's client ID, redirect URI and desired scopes
+const clientId = '28e3d5fbf78849fa82982068bf1f9589';
+const redirectUri = 'http://localhost:3000/';
+const scopes = [
+  'streaming',
+  'user-read-private',
+  'user-modify-playback-state',
+  "user-read-email"
+];
+
+// If there is no token, redirect to Spotify authorization
+if (!_token) {
+  window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
+}
+
+// Set up the Web Playback SDK
 
 window.onSpotifyPlayerAPIReady = () => {
-    player = new Spotify.Player({
+  const player = new Spotify.Player({
     name: 'Web Playback SDK Template',
-    getOAuthToken: cb => { cb(token); }
+    getOAuthToken: cb => { cb(_token); }
   });
 
   // Error handling
@@ -27,8 +62,8 @@ window.onSpotifyPlayerAPIReady = () => {
     console.log('Ready with Device ID', data.device_id);
     deviceID = data.device_id;
     // Play a track using our new device ID
+    //play(data.device_id);
   });
-
   // Connect to the player!
   player.connect();
 }
@@ -36,14 +71,12 @@ window.onSpotifyPlayerAPIReady = () => {
 // Play a specified track on the Web Playback SDK's device ID
 export function playTrack(device_id, spotify_uri) {
   spotify_uri_num = spotify_uri
-  let data_info = '{\"uris\": [\"' + spotify_uri + '\"]}'
-  console.log(data_info);
-  console.log(spotify_uri);
+  let data_info = '{\"uris\": [\"' + spotify_uri + '\"]}';
   $.ajax({
    url: "https://api.spotify.com/v1/me/player/play?device_id=" + device_id,
    type: "PUT",
    data: data_info,
-   beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + token );},
+   beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
    success: function(data) { 
      console.log(data)
    }
