@@ -94,6 +94,17 @@
     border-radius: 54px;
     background-color: #0da39c;
     cursor: pointer;
+    padding: .5rem .75rem;
+    border-radius: 54px;
+    margin-top: 1.27rem;
+    margin-right: .5rem;
+  }
+
+  .removeTrack{
+    color: white;
+    border-radius: 54px;
+    background-color: #0da39c;
+    cursor: pointer;
     padding: .5rem .5rem;
     border-radius: 54px;
     margin-top: 1.27rem;
@@ -105,13 +116,12 @@
     border-radius: 54px;
     background-color: #0da39c;
     cursor:pointer;
-    padding: .5rem .5rem;
-    border-radius: 54px;
+    padding: .5rem .5rem; 
     margin-top: 1.27rem;
-    margin-right: 1rem;
-
+    margin-right: .5rem;
   }
 
+  
 
   .pauseButton{
     color: white;
@@ -122,7 +132,6 @@
     border-radius: 54px;
     margin-top: 1.27rem;
     margin-right: 1rem;
- 
   }
 
   .resumeButton{
@@ -134,5 +143,4 @@
     border-radius: 54px;
     margin-top: 1.27rem;
     margin-right: 1rem;
-
   }

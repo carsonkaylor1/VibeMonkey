@@ -28,7 +28,8 @@ const scopes = [
   'streaming',
   'user-read-private',
   'user-modify-playback-state',
-  "user-read-email"
+  "user-read-email",
+  'playlist-modify-public'
 ];
 
 // If there is no token, redirect to Spotify authorization
@@ -39,7 +40,7 @@ if (!_token) {
 // Set up the Web Playback SDK
 
 window.onSpotifyPlayerAPIReady = () => {
-  const player = new Spotify.Player({
+    player = new Spotify.Player({
     name: 'Web Playback SDK Template',
     getOAuthToken: cb => { cb(_token); }
   });
@@ -84,7 +85,9 @@ export function playTrack(device_id, spotify_uri) {
 }
 
 export function pauseTrack(){
-  player.pause();
+  player.pause().then(() => {
+    console.log('Paused!');
+  });
 }
 
 export function resumeTrack(){

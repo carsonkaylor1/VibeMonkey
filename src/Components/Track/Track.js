@@ -23,7 +23,7 @@ class Track extends React.Component {
 
     renderAction() {
         if (this.props.isRemoval) { //track in playlist side
-            return <button className="removeTrack" onClick={this.removeTrack}>-</button>
+            return <a className="removeTrack" onClick={this.removeTrack}>-</a>
         }
 
         else if(this.props.isCleanSlate){
@@ -48,7 +48,7 @@ class Track extends React.Component {
             else{
                 return(
                     <div className='buttons'><a className="addTrack" onClick={this.addTrack}>+</a>
-                    <a className="playButton" onClick={this.playTrack}>PLAY</a>
+                    <a className="playButton" onClick={this.playTrack}><i className="fas fa-play"></i></a>
                     </div>
                 )
             }
