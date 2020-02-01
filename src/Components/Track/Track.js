@@ -13,9 +13,6 @@ class Track extends React.Component {
         };
         this.addTrack = this.addTrack.bind(this);
         this.removeTrack = this.removeTrack.bind(this);
-        this.togglePlayPreview = this.togglePlayPreview.bind(this);
-        // this.audioEnded = this.audioEnded.bind(this);
-        this.renderPreviewIcon = this.renderPreviewIcon.bind(this);
         this.playTrack = this.playTrack.bind(this);
         this.pauseTrack = this.pauseTrack.bind(this);
         this.resumeTrack = this.resumeTrack.bind(this);
@@ -71,6 +68,7 @@ class Track extends React.Component {
     }
     
     playTrack(){
+
         this.props.clean(true);
         WebPlayer.playTrack(WebPlayer.deviceID, this.props.track.uri);
         this.setState({
@@ -90,41 +88,6 @@ class Track extends React.Component {
         this.setState({
             trackPaused: false
         })
-    }
-
-    togglePlayPreview() {
-        const audio = this.refs.audio;
-        if (!this.state.currentlyPlaying) {
-            audio.play();
-            this.setState({ 
-                currentlyPlaying: true, 
-            });
-        } else {
-            audio.pause();
-            this.setState({ 
-                currentlyPlaying: false,
-            });
-        }
-    }
-
-    renderPreviewIcon() {
-        if(this.props.track.preview) {
-            if (!this.state.currentlyPlaying) {
-                return (
-                    <i  className="fa fa-play Track-preview-icon" 
-                        aria-hidden="true" 
-                        onClick={this.togglePlayPreview}></i>
-                );
-            } else {
-                return (
-                        <i  className="fa fa-pause Track-preview-icon" 
-                            aria-hidden="true" 
-                            onClick={this.togglePlayPreview}></i>
-                );
-            }
-        } else {
-            return <p className="Track-preview-unavailable">No <br/> Preview <br />Available</p>
-        }
     }
 
     render() {
