@@ -15,6 +15,8 @@
     color: #010c3f;
     text-align: center;
     font-size: 1rem;
+    font-family: 'Happy Monkey';
+    font-weight: bold;
   }
   
   .SearchBar input:focus {
@@ -30,6 +32,7 @@
     text-align: center;
     font-size: .833rem;
     transition: background-color .25s;
+    font-weight: bold;
   }
   
   .SearchBar a:hover {

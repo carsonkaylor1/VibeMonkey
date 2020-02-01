@@ -19,6 +19,8 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.55rem;
     color: #fff;
+    font-family: 'Happy Monkey';
+    font-weight: normal;
   }
   
   .Playlist-save {
@@ -31,6 +33,7 @@
     text-align: center;
     font-size: .83rem;
     transition: background-color .25s;
+    font-weight: bold;
   }
   
   .Playlist-save:hover {

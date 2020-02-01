@@ -21,33 +21,37 @@ class Track extends React.Component {
         this.resumeTrack = this.resumeTrack.bind(this);
     }
 
-    renderAction() {
+    renderActionLeft(){
         if (this.props.isRemoval) { //track in playlist side
             return <a className="removeTrack" onClick={this.removeTrack}>-</a>
         }
+        return(
+            <a className="addTrack" onClick={this.addTrack}>+</a>
+        )
+    }
 
-        else if(this.props.isCleanSlate){
+
+    renderAction() {
+        if(this.props.isCleanSlate && !this.props.isRemoval){
 
             if (this.props.track.uri == WebPlayer.spotify_uri_num){
                 if(!this.state.trackPaused)
                 return(
                     <div className='buttons'>
-                        <a className="addTrack" onClick={this.addTrack}>+</a>
-                        <a className="pauseButton" onClick={this.pauseTrack}>PAUSE</a>
+                        <a className="pauseButton" onClick={this.pauseTrack}><i class="fas fa-pause"></i></a>
                     </div>
                 )
                 else{
                     return(
                         <div className='buttons'>
-                            <a className="addTrack" onClick={this.addTrack}>+</a>
-                            <a className="resumeButton" onClick={this.resumeTrack}>RESUME</a>
+                            <a className="resumeButton" onClick={this.resumeTrack}><i className="fas fa-play"></i></a>
                         </div>
                     )
                 }
             }
             else{
                 return(
-                    <div className='buttons'><a className="addTrack" onClick={this.addTrack}>+</a>
+                    <div className='buttons'>
                     <a className="playButton" onClick={this.playTrack}><i className="fas fa-play"></i></a>
                     </div>
                 )
@@ -67,7 +71,6 @@ class Track extends React.Component {
     }
     
     playTrack(){
-        console.log(WebPlayer.deviceID);
         this.props.clean(true);
         WebPlayer.playTrack(WebPlayer.deviceID, this.props.track.uri);
         this.setState({
@@ -127,11 +130,8 @@ class Track extends React.Component {
     render() {
         return(
             <div className="Track" key={this.props.track.id}>
+                {this.renderActionLeft()}
                 <div className="Track-cover-preview">
-                    <audio ref="audio" src={this.props.track.preview} onEnded={() => this.setState({ currentlyPlaying: false })}></audio>
-                    <div className="Track-preview-container">
-                        {this.renderPreviewIcon()}
-                    </div>
                     <img className="Track-album-cover" src={this.props.track.cover} alt="album cover"/>
                 </div>
                 <div className="Track-information">

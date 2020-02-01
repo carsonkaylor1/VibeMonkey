@@ -10,12 +10,9 @@ html {
 
 h1 {
   padding: .77rem 0;
-  background: #00F260;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background-color: rgba(0, 0, 0, 0.0);
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Happy Monkey';
   font-size: 2.5rem;
   color: #fff;
 }
@@ -25,21 +22,20 @@ h1 .highlight {
 }
 
 h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Happy Monkey';
   font-size: 1.55rem;
 }
 
 .App {
   height: 100%;
-  padding: 0 17% 10% 17%;
-  background: #00F260;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 0 10% 10% 10%;
+  
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Happy Monkey';
+  font-weight: bold;
   font-weight: 500;
   color: #fff;
 }
@@ -48,6 +44,17 @@ background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, F
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.title_div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+}
+
+.monk_pic{
+  height: 60px;
 }
 
 @media only screen and (max-width: 1020px) {

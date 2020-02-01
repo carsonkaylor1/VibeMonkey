@@ -15,7 +15,15 @@ class SearchBar extends React.Component {
   
   // Sets the argument for the seearch method in App.js to the state of term
   search() {
-    this.props.onSearch(this.state.term);
+    if (this.state.term){
+      this.props.onSearch(this.state.term);
+    }
+    else{
+      this.setState({
+        term: ''
+      });
+    }
+    
   }
   
   // Sets the state of term to the value the user enters in input
@@ -35,7 +43,7 @@ class SearchBar extends React.Component {
         <input  placeholder="Enter A Song, Album, or Artist"
                 onChange={this.handleTermChange}
                 onKeyPress={this.handleKeyPress} />
-        <a  onClick={this.search}>SEARCH</a>
+        <a  onClick={this.search}>Search</a>
       </div>
     );
   }

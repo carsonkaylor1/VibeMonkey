@@ -4,6 +4,10 @@ import './index.css';
 import App from './Components/App/App';
 import * as serviceWorker from './serviceWorker';
 
+// let backgroundColor = '#ffffff'
+
+// document.body.style.background = backgroundColor;
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
