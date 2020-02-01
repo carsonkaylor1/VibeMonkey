@@ -1,6 +1,6 @@
 import React from 'react';
 import './Track.css';
-import * as WebPlayer from '../../../public/web-player'
+import * as WebPlayer from '../../../docs/web-player'
 
 class Track extends React.Component {
     

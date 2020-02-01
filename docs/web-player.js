@@ -23,6 +23,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = '28e3d5fbf78849fa82982068bf1f9589';
+//const redirectUri = 'http://vibemonk.surge.sh/';
 const redirectUri = 'http://localhost:3000/';
 const scopes = [
   'streaming',
@@ -60,7 +61,6 @@ window.onSpotifyPlayerAPIReady = () => {
 
   // Ready
   player.on('ready', data => {
-    console.log('Ready with Device ID', data.device_id);
     deviceID = data.device_id;
     // Play a track using our new device ID
     //play(data.device_id);

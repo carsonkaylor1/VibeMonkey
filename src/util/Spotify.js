@@ -1,5 +1,6 @@
-import * as WebPlayer from '../../public/web-player'
+import * as WebPlayer from '../../docs/web-player'
 const clientId = '28e3d5fbf78849fa82982068bf1f9589';
+//const redirectUri = 'http://vibemonk.surge.sh/';
 const redirectUri = 'http://localhost:3000/';
 
 let accessToken = WebPlayer._token;

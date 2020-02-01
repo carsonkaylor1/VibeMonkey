@@ -64,7 +64,7 @@ class App extends React.Component {
         <div className="title_div">
             <h1>Vibe<span className="highlight">Monk</span></h1>
             <div>
-            <img className='monk_pic' src='https://i.imgur.com/YQz2haw.png' alt='monk'/>
+            <img className='monk_pic' src='https://i.imgur.com/YQz2haw.png' alt='monk image'/>
             </div>
         </div>
         <div className="App">
