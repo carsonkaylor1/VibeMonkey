@@ -17,7 +17,6 @@ window.location.hash = '';
 
 // Set token
 export let _token = hash.access_token;
-console.log(_token);
 
 const authEndpoint = 'https://accounts.spotify.com/authorize';
 
