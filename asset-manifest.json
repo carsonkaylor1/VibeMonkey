@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/VibeMonk/static/css/main.f5b02229.chunk.css",
+    "main.js": "/VibeMonk/static/js/main.7e85dcb7.chunk.js",
+    "main.js.map": "/VibeMonk/static/js/main.7e85dcb7.chunk.js.map",
+    "runtime-main.js": "/VibeMonk/static/js/runtime-main.53508009.js",
+    "runtime-main.js.map": "/VibeMonk/static/js/runtime-main.53508009.js.map",
+    "static/js/2.003a8318.chunk.js": "/VibeMonk/static/js/2.003a8318.chunk.js",
+    "static/js/2.003a8318.chunk.js.map": "/VibeMonk/static/js/2.003a8318.chunk.js.map",
+    "index.html": "/VibeMonk/index.html",
+    "precache-manifest.33699535b0a51677f9333e735a2f7e2b.js": "/VibeMonk/precache-manifest.33699535b0a51677f9333e735a2f7e2b.js",
+    "service-worker.js": "/VibeMonk/service-worker.js",
+    "static/css/main.f5b02229.chunk.css.map": "/VibeMonk/static/css/main.f5b02229.chunk.css.map",
+    "static/js/2.003a8318.chunk.js.LICENSE": "/VibeMonk/static/js/2.003a8318.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53508009.js",
+    "static/js/2.003a8318.chunk.js",
+    "static/css/main.f5b02229.chunk.css",
+    "static/js/main.7e85dcb7.chunk.js"
+  ]
+}
