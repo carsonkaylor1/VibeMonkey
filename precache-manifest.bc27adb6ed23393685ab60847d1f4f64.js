@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b204e099ec7bbad0d6ff09f87a7822c4",
+    "revision": "3d0e076cb9e4769c03c9e52d3ae677df",
     "url": "/VibeMonk/index.html"
   },
   {
-    "revision": "0cc76c96728a3acabab3",
+    "revision": "70ad636d33c80f9f7079",
     "url": "/VibeMonk/static/css/main.f5b02229.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/VibeMonk/static/js/2.003a8318.chunk.js.LICENSE"
   },
   {
-    "revision": "0cc76c96728a3acabab3",
-    "url": "/VibeMonk/static/js/main.7e85dcb7.chunk.js"
+    "revision": "70ad636d33c80f9f7079",
+    "url": "/VibeMonk/static/js/main.43ad6400.chunk.js"
   },
   {
     "revision": "e1adbe291443218eebd8",
