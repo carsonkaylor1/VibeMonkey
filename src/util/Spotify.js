@@ -1,8 +1,8 @@
 import * as WebPlayer from '../../public/web-player'
 const clientId = '28e3d5fbf78849fa82982068bf1f9589';
 //const redirectUri = 'http://vibemonk.surge.sh/';
-const redirectUri = 'http://localhost:3000/';
-//const redirectUri = 'https://carsonkaylor1.github.io/VibeMonk/';
+//const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'https://carsonkaylor1.github.io/VibeMonk/';
 let accessToken = WebPlayer._token;
 
 const Spotify = {
